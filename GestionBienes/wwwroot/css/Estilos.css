@@ -1,0 +1,10 @@
+﻿.btn-secondary {
+    color: #fff;
+    background-color: #212529;
+    border-color: #fff;
+}
+
+.btn-secondary:hover{
+    background-color: #117a8b;
+}
+

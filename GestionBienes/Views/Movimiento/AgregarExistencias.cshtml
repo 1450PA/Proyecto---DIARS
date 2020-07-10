@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<form action="/Movimiento/AgregarExistencias?IdBien=@Model.Id" method="post">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ingresar Existencias</h5>
+        <button type="button" class="close" data-dismiss="modal"
+                aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <h4>Nombre del bien: @Model.Nombre</h4>
+        <div class="form-group">
+            <label id="Lbl-CantidadMensaje">
+                Cantidad a ingresar: <span style="color: red;">*</span>
+            </label> 
+            <input name="Cantidad" class="form-control" type="number" min="1" max="10000" > <span style="color: red">
+                <span class="field-validation-valid" data-valmsg-for="Cantidad" data-valmsg-replace="true"></span>
+            </span>
+        </div>
+        <div class="form-group">
+            <div id="Div-SeleccionLugarLista">
+                <label>Lugar de donde porceden los bienes:</label> 
+                <select class="form-control" name="Lugar">
+                    <option value="Municipalidad">Municipalidad</option>
+                    <option value="Gobierno Regional">Gobierno Regional</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+        <button style="Background-color: #28a745; border-color: #28a745;" type="submit" name="submitSave" class="btn btn-primary">Guardar cambios</button>
+    </div>
+</form>

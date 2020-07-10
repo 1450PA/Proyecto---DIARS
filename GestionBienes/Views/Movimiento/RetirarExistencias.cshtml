@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+}
+
+<form action="/Movimiento/RetirarExistencias?IdBien=@Model.Id" method="post">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Retirar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <h3>Nombre del Bien: @Model.Nombre</h3>
+        <h4>
+            Existencias: @Model.CantidadActual
+            @if (Model.UnidadMedida == 1)
+            {<t>Kilogramos</t>}
+            @if (Model.UnidadMedida == 2)
+            {<t>Metros</t>}
+            @if (Model.UnidadMedida == 3)
+            {<t>Litros</t>}
+            @if (Model.UnidadMedida == 4)
+            {<t>Unidades</t>}
+        </h4>
+
+        <input type="hidden" name="TipoMovimiento" value="1" />
+        <div class="form-group">
+            <label id="Lbl-CantidadMensaje">
+                Cantidad a retirar<span style="color: red;">*</span>
+            </label>
+            <input type="number" min="1" max="10000" class="form-control" name="Cantidad"><span style="color: red">
+                <span class="field-validation-valid" data-valmsg-for="Cantidad" data-valmsg-replace="true"></span>
+            </span>
+        </div>
+        <label>
+            Lugar a donde van los bienes <span style="color: red;">*</span>
+        </label>
+        <input type="text" class="form-control" name="Lugar" id=""> <span style="color: red">
+            <span class="field-validation-valid" data-valmsg-for="Lugar" data-valmsg-replace="true"></span>
+        </span> <br>
+        <div class="form-group">
+            <label>Seleccione tipo de documento</label>
+            <select name="TipoDocumento" class="form-control">
+                <option value="Acta">Acta</option>
+                <option value="Pecosa">Pecosa</option>
+            </select> <span style="color: red">
+                <span class="field-validation-valid" data-valmsg-for="TipoDocumento" data-valmsg-replace="true"></span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Nombre de la persona que lo está retirando</label> <input type="text" class="form-control" name="PersonaLleva" placeholder="Ingrese el nombre de la persona que lo está retirando">
+            <span style="color: red">
+                <span class="field-validation-valid" data-valmsg-for="PersonaLleva" data-valmsg-replace="true"></span>
+            </span>
+        </div>
+        <span style="color: red">
+            <span class="field-validation-valid" data-valmsg-for="IdBien" data-valmsg-replace="true"></span>
+        </span> <br>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button style="Background-color: #28a745; border-color: #28a745;" type="submit" name="submitSave" class="btn btn-primary">Guardar cambios</button>
+    </div>
+</form>

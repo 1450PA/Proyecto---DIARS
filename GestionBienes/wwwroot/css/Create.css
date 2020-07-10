@@ -1,0 +1,42 @@
+﻿
+.container-login100 {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.wrap-login100 {
+    width: 520px;
+    min-height: 100vh;
+    background: #fff;
+    border-radius: 2px;
+    position: relative;
+}
+
+.login100-more {
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    width: calc(100% - 520px);
+    position: relative;
+    z-index: 1;
+}
+
+.p-t-72 {
+    padding-top: 72px;
+}
+
+.p-l-50 {
+    padding-left: 50px;
+}
+
+.p-r-50 {
+    padding-right: 50px;
+}
+
